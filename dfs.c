@@ -65,7 +65,7 @@ int main(int argc, char **argv)
       //connfdp = malloc(sizeof(int));
       connfdp = accept(listenfd, (struct sockaddr*)&clientaddr, &clientlen);
       parseRequest(connfdp, firstUser);
-      close(connfdp)
+      close(connfdp);
     }
 }
 
