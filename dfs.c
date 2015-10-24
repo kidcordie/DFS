@@ -62,9 +62,10 @@ int main(int argc, char **argv)
     */
     listenfd = open_listenfd(port);
     while (1) {
-      connfdp = malloc(sizeof(int));
-      *connfdp = accept(listenfd, (struct sockaddr*)&clientaddr, &clientlen);
+      //connfdp = malloc(sizeof(int));
+      connfdp = accept(listenfd, (struct sockaddr*)&clientaddr, &clientlen);
       parseRequest(connfdp, firstUser);
+      close(connfdp)
     }
 }
 
